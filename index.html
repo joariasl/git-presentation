@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Git</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -41,50 +41,224 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
+					<h1>Git</h1>
+					<!-- <h3>The HTML Presentation Framework</h3> -->
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+						<small>By <a href="http://www.jorgearias.cl/">Jorge Arias</a> & <a href="https://github.com/rvmeier">Rodrigo Verdugo</a></small>
 					</p>
 				</section>
 
+				<section data-markdown>
+					<script type="text/template">
+						## Después de esta presentación
+
+						* Comprenderás los beneficios de un Sistema de Control de Versiones
+						* Conocerás cómo funciona Git
+						* Podrás trabajar con Git
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Sistema de Control de Versiones
+
+						* Gestión de cambios en el desarrollo
+
+						CVS, Subversion, Mercurial, Git, entre otros...
+					</script>
+				</section>
+
 				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
+					<section data-markdown  data-separator-notes="^Note:">
+						<script type="text/template">
+							## Git
+
+							Diseñado para ser:
+
+							* Confiable
+							* Alto rendimiento
+							* Distribuido
+							* Gestor de contenidos
+
+							Note:
+							* Confiable (autenticación criptográfica de historial)
+
+							* Alto rendimiento (20.000 historias en 5 segundos)
+
+							* Distribuido
+
+							* Gestor de contenidos
+						</script>
+					</section>
+
+					<section>
+						<h2>Confiable</h2>
+						<ul>
+							<li>Integridad: Suma de verificación SHA1 de 160 bits</li>
+							<li>Guarda como instantáneas y no como cambios</li>
+							<li>Nada se borra</li>
+							<li>Firma de autores</li>
+							<li>Transfiere usando HTTPS, SSH</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Alto rendimiento</h2>
+						<ul>
+							<li>Procesar 20.000 historias en menos 5 segundos (Linus Torvalds)</li>
+							<li>+44% C / +34% Shell</li>
+							<li>GNU GPLv2</li>
+						</ul>
+						<aside class="notes">
+							2 a 3 segundos descargando historial.
+						</aside>
+					</section>
+
+					<section  data-background="#ffffff">
+						<h2>Distribuido</h2>
+						<img alt="" src="img/02-distributed.svg" style="max-width:70%;">
+						<!-- Fuente imagen: https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone -->
+						<aside class="notes">
+							Repositorios locales.
+						</aside>
+					</section>
+
+					<section>
+						<h2>Gestor de contenidos</h2>
+						<ul>
+							<li>Mini sistema de archivos</li>
+							<li>Desarrollo no lineal (Ramas paralelas)</li>
+						</ul>
+					</section>
 				</section>
 
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+						<h2>Comenzar con Git</h2>
 					</section>
 					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
+						<h2 style="text-transform:lowercase;">git config</h2>
+						<pre><code data-trim class="sh">
+							$ git config --global user.name "John Doe"
+						</code></pre>
+						<pre><code data-trim class="sh">
+							$ git config --global user.email johndoe@example.com
+						</code></pre>
+						<p>Configuración global en dotfile ~/.gitconfig</p>
 					</section>
 					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
+						<h2 style="text-transform:lowercase;">git init</h2>
+						<ul>
+							<li>$ git init [directory]</li>
+						</ul>
+						<p>Todo Git está en .git/</p>
+						<aside class="notes">
+							git config --list<br>
+							git config --global core.editor emacs<br>
+							git config --global merge.tool vimdiff
+						</aside>
+					</section>
+					<section>
+						<h2>Obtener Ayuda</h2>
+						<pre><code data-trim class="sh">
+							$ git &#60;command&#62; --help
+						</code></pre>
+						<pre><code data-trim class="sh">
+							$ git help &#60;command&#62;
+						</code></pre>
+						<pre><code data-trim class="sh">
+							$ man git-&#60;command&#62;
+						</code></pre>
 					</section>
 				</section>
 
+
 				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
+					<section>
+						<h2>Guardando cambios</h2>
+					</section>
+					<section>
+						<h2>The Staging Area</h2>
+						<img alt="" src="img/file-status-lifecycle.png" style="width:80%;">
+					</section>
+					<section>
+						<h2 style="text-transform:lowercase;">git [add|rm]</h2>
+						<p>Agregar modificaciones al staging area o área de preparación</p>
+						<pre><code data-trim class="sh">
+							$ git add [file|folder] ...
+						</code></pre>
+						<pre><code data-trim class="sh">
+							$ git rm [file|folder] ... # Remover archivos de git y disco
+						</code></pre>
+						<pre><code data-trim class="sh">
+							$ git rm --cached [file|folder] ... # Remover del staging area
+						</code></pre>
+					</section>
+					<section>
+						<h2 style="text-transform:lowercase;">git status</h2>
+						<p>Comprobar cambios (staging area) y estado del repositorio</p>
+						<pre><code data-trim class="sh">
+							$ git status
+						</code></pre>
+					</section>
+					<section>
+						<h2>Archivo <span style="text-transform:lowercase;">.gitignore</span></h2>
+						<p>Configuración de archivos a los que Git no hará seguimiento</p>
+						<pre><code data-trim>
+*.ext
+!*.c
+/folder
+folder #All subdirs
+build/
+						</code></pre>
+						<p><small>(Debe estar en la raíz del proyecto)</small></p>
+					</section>
+					<section>
+						<h2 style="text-transform:lowercase;">git diff</h2>
+						<p>Comparar cambios</p>
+						<pre><code data-trim class="sh">
+							$ git diff [--cached|--staged] # Modificados contra preparados
+						</code></pre>
+						<pre><code data-trim class="sh">
+							$ git diff &#60;commit&#62; &#60;commit&#62; # Entre dos commits
+						</code></pre>
+					</section>
+					<section>
+						<h2 style="text-transform:lowercase;">git commit</h2>
+						<p>Confirmar cambios del staging area a la historia</p>
+						<pre><code data-trim class="sh">
+							$ git commit
+						</code></pre>
+						<pre><code data-trim class="sh">
+							$ git commit -m "Menssage"
+						</code></pre>
+						<pre><code data-trim class="sh">
+							$ git commit [-a|--all] # Stage all modified and deleted paths
+						</code></pre>
+						<pre><code data-trim class="sh">
+							$ git commit --amend # Reemplaza último commit
+						</code></pre>
+						<p><small>Nota: Ningún commit se elimina implícitamente</small></p>
+					</section>
+				</section>
+			</section>
+
+				<section>
+					<h2 style="text-transform:lowercase;">git log</h2>
+					<p>Ver Historia de cambios</p>
+					<pre><code data-trim class="sh">
+						$ git log # Ver últimos cambios de la rama
+					</code></pre>
+					<pre><code data-trim class="sh">
+						$ git log --all # Ver cambios de todas las ramas
+					</code></pre>
+					<pre><code data-trim class="sh">
+						$ git log --oneline --decorate # Ver los punteros de referencia
+					</code></pre>
+					<pre><code data-trim class="sh">
+						$ git log --graph # Ver ramas graficadas
+					</code></pre>
 				</section>
 
 				<section>
