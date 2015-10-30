@@ -1,7 +1,7 @@
 # Apunte de comandos Git
 <sup style="float:right;display:block;text-align:right;">[Source Markdown](https://github.com/joariasl/git-presentation/blob/master/apuntes-git.md)</sup>
 
-By [Jorge Arias](www.jorgearias.cl).
+By [Jorge Arias](http://www.jorgearias.cl/).
 
 ## Tabla de contenidos
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -19,6 +19,14 @@ By [Jorge Arias](www.jorgearias.cl).
   - [Branch](#branch)
   - [Checkout](#checkout)
   - [Merge](#merge)
+- [Remotos](#remotos)
+  - [Clonar](#clonar)
+  - [Administrar remotos](#administrar-remotos)
+  - [Fetch](#fetch)
+  - [Pull](#pull)
+  - [Push](#push)
+- [Tags](#tags)
+- [Comandos avanzados (con precaución)](#comandos-avanzados-con-precauci%C3%B3n)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -48,6 +56,9 @@ git config --global core.editor vim # Configurar editor predeterminado
 ```
 ```sh
 git config --global merge.tool vimdiff # Configurar herramienta para resolver conflictos
+```
+```sh
+git config --global alias.<name> 'command' # Crear un alias para git
 ```
 
 Nota: Configuración global se guarda en ~/.gitconfig. Si no se define --global la configuración será para el repositorio y se guardará en .git/config.
@@ -83,6 +94,9 @@ git diff <commit1> <commit2> # Entre dos commits
 ```
 ```sh
 git diff --check # Mostrar espacios agregados que pueden causar problemas. Se recomienda excluir espacios redundantes en líneas.
+```
+```sh
+git diff <commit1> <commit2> [path] # Entre dos commits para un archivo o folder
 ```
 
 ## Commit
@@ -158,6 +172,10 @@ git branch --merged # Mostrar ramas fusionadas a la actual. Con * si aún no se 
 ```sh
 git branch --no-merged # Mostrar ramas que no han sido incorporadas a la actual
 ```
+```sh
+git branch -m <new-name> # Mover/renombrar una rama y su correspondiente reflog
+```
+
 ### Checkout
 ```sh
 git checkout <rama> # Cambiar a rama
@@ -168,4 +186,72 @@ git checkout -b <rama> # Cambiar a rama y crear si no existe
 ### Merge
 ```sh
 git merge <rama> # Fusionar <rama> con posición actual
+```
+```sh
+git merge --no-ff # Fusionar evitando fast-forward
+```
+
+## Remotos
+
+### Clonar
+```sh
+git clone <repository> [<directory>] # Clonar ruta de repositorio a directorio si se define, sino usa nombre del repositorio
+```
+
+### Administrar remotos
+```sh
+git remote show # Ver repositorios remotos
+```
+```sh
+git remote -v # Ver repositorios remotos con detalle
+```
+```sh
+git remote add <name> <repository/url> # Agrega repositorio remoto
+```
+```sh
+git remote rm <name> # Elimina remoto
+```
+```sh
+git remote rename <old-name> <new-name> # Cambiar nombre
+```
+
+
+### Fetch
+```sh
+git fetch <repository> # Descargar objetos y referencias de repositorio remoto
+```
+
+### Pull
+```sh
+git pull <repository> <ref> # Hacer Fetch y luego Merge a la rama o referencia remota
+```
+
+### Push
+```sh
+git push <repository> <ref> # Publicar cambios de rama o referencia y objetos asociados
+```
+```sh
+git push <repository> --all # Publicar todas las ramas
+```
+
+## Tags
+```sh
+git tag # Mostrar etiquetas actuales
+```
+```sh
+git tag -l 'v1.8.5*' # Mostrar buscando expresión regular
+```
+```sh
+git tag -a v1.4 -m 'Mensaje de version' # Crear tag con mensaje opcional
+```
+
+## Comandos avanzados (con precaución)
+```sh
+git reflog show # Mostrar log de referencias (Recorrido de HEAD)
+```
+```sh
+git reflog expire --expire-unreachable=<time> # Quitar del reflog commits no referenciados por ramas ni reflog. Predeterminado 30 días, --expire-unreachable=all expira de todos los tiempos.
+```
+```sh
+git gc # Limpiar y optimizar repositorio. Primero limpiar reflog para eliminar commits no referenciados.
 ```
