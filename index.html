@@ -56,9 +56,11 @@
 					<h2>Algunos recursos</h2>
 					<p>
 						<ul>
+							<li><a href="https://git-scm.com/">Git</a></li>
 							<li><a href="apuntes-git.html">Apunte de comandos Git (By Jorge Arias)</a></li>
 							<li><a href="https://git-scm.com/doc">Documentación Git</a></li>
 							<li><a href="https://www.atlassian.com/git/tutorials">Tutorial Git (Atlassian)</a></li>
+							<li><a href="https://www.sourcetreeapp.com/">Atlassian SourceTree (Git client)</a></li>
 						</ul>
 					</p>
 				</section>
@@ -154,6 +156,7 @@
 					</section>
 					<section>
 						<h2 style="text-transform:lowercase;">git config</h2>
+						Nuestra identidad
 						<pre><code data-trim class="sh">
 							$ git config --global user.name "John Doe"
 						</code></pre>
@@ -231,7 +234,7 @@ folder #All subdirs
 build/
 						</code></pre>
 						<p><small>(Archivo .gitignore debe estar en la raíz del proyecto)</small></p>
-						<p>Collection .gitignore templates: <a alt="" href="https://github.com/github/gitignore">https://github.com/github/gitignore</a></p>
+						<p>Collection .gitignore templates:<br><a alt="" href="https://github.com/github/gitignore">https://github.com/github/gitignore</a></p>
 					</section>
 					<section>
 						<h2 style="text-transform:lowercase;">git diff</h2>
@@ -375,7 +378,7 @@ build/
 					<h2 style="text-transform:lowercase;">git merge</h2>
 					<p>Fusionando ramas</p>
 					<pre><code data-trim class="sh">
-						$ git merge &#60;rama&#60; # Fusionar &#60;rama&#60; con posición actual
+						$ git merge &#60;rama&#62; # Fusionar &#60;rama&#62; con posición actual
 					</code></pre>
 					<pre><code data-trim class="sh">
 						$ git merge --no-ff # Fusionar evitando fast-forward
